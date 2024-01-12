@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day1 입니다</title>
+    <!-- 파비콘(favicon) -->
+    <link rel="icon" type="images/x-icon" href="/day1/images/favicon.ico">
+    <!-- external방식 -->
+    <link rel="stylesheet" href="test2_2.css">
+    <!-- 인터널방식(internal) -->
+    <style>
+        p {
+            background-color: yellow;
+            text-align: center;
+        }
+
+        p b {
+            background-color: lightblue;
+        }
+
+        /* body {
+            background-image: url('/day1/images/camera.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        } */
+
+        th,
+        td {
+            border: 1px solid black;
+            /* border-style: solid;
+               border-color: black; */
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <p>반갑습니다 <b>홍길동님</b> </p>
+    <!-- 인라인방식(inline) -->
+    <p style="background-color: pink;">오늘은 목요일 입니다.</p>
+    <p class="c1">내일은 금요일입니다.</p>
+    <a href="https://www.naver.com/" target="_self">Naver(self)</a>
+    <a href="https://www.naver.com/" target="_blank">Naver(blank)</a>
+    <a href="https://www.naver.com/" target="_parent">Naver(parent)</a>
+    <a href="https://www.naver.com/" target="_top">Naver(top)(아이프레임있을 때 적용됨)</a>
+    <a href="/html/hello.html">hello</a>
+    <br><br>
+    <!-- 상대경로 : 현재 위치를 기준으로 경로를 찾음 -->
+    <!-- .(점) : 현재위치 / ..(점2개) : 상위폴더 -->
+    <img src="images/camera.jpg" alt="camera" width="300" height="150">
+    <img src="./images/camera.jpg" alt="camera" width="300" height="150">
+    <img src="../day1/images/camera.jpg" alt="camera" width="300" height="150">
+    <!-- 절대경로 : 최상위 경로(root)부터 경로를 지정하는 방식 -->
+    <img src="/day1/images/camera.jpg" alt="camera" width="300" height="150">
+
+    <table>
+        <tr>
+            <th>이름</th>
+            <th colspan="2">몸무게/키</th>
+
+        </tr>
+        <tr>
+            <td>김재현</td>
+            <td>65</td>
+            <td rowspan="2">185<br>
+                132</td>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>80</td>
+
+        </tr>
+    </table>
+    
+    <iframe id="exifr" src="test1.html" scrolling="no" width="100%" height="300"></iframe>
+
+    <div>
+        <h3>간식</h3>
+        <ul>
+            <li>items1</li>
+            <li>items2</li>
+            <li>items3</li>
+            <h4>야참</h4>
+            <ol>
+                <li>1</li>
+                <li>2</li>
+            </ol>
+        </ul>
+    </div>
+
+    <p class="g1">p1</p>
+    <p class="g1">p2</p>
+    <ul class="g1">
+        <li>item1</li>
+        <li>item2</li>
+    </ul>
+
+</body>
+
+</html>

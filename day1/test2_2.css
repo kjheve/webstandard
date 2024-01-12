@@ -1,0 +1,21 @@
+p.c1 {
+    background-color: lightskyblue;
+}
+
+
+
+th, td {
+    background-color: #87c7ff;
+    border-radius: 30%;
+    text-align: center;
+}
+
+.g1 {
+    background-color: orange;
+    text-align: left;
+}
+
+#exifr {
+    border: 2px solid red;
+}
+
