@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 선택자</title>
+
+    <style>
+        input[type="button"] {
+            border:5px solid red;
+        }
+        [type="text"] {
+            background-color: yellow;
+        }
+        input[type="password"] {
+            background-color: green;
+        }
+        [class] {
+            color: blue;
+            font-size: 20px;
+        }
+        [class="g2"] {
+            font-size: 30px;
+        }
+        [class="g2 g3"] {
+            font-size: 30px;
+            background-color: aqua;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul>
+        <li class="g1">menu1</li>
+        <li class="g2">menu2</li>
+        <li class="g1">menu3</li>
+        <li class="g2">menu4</li>
+        <li class="g2 g3">menu4</li>
+        <li><input type="button" value="버튼">
+            <input type="text">
+            <input type="password">
+        </li>
+
+    </ul>
+</body>
+
+</html>

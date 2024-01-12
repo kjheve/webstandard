@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex2</title>
+    <style>
+        * {
+            /* outline : 요소 사이 경계선 생성, border와 다름*/
+            outline: 1px solid black;
+            /* border: 1px solid black; */
+        }
+        .container1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around; /* item의 주변공간이 동일 */
+        }
+        .container2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between; /* 양 끝단에 맞추기 */
+        }
+        .container3 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly; /* 동일 공백 */
+        }
+        .container4 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .container5 {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        .container6 {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        .item {
+            font-size: 20px;
+        }
+        .item1 {
+            background-color: lightcoral;
+        }
+        .item2 {
+            background-color: lightskyblue;
+        }
+        .item3 {
+            background-color: lightgoldenrodyellow;
+        }
+        .item4 {
+            background-color: lightseagreen;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- .container>.item.item${item$}*3 -->
+    <div class="container1">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
+        <div class="item item4">item4</div>
+    </div>
+    <div class="container2">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
+        <div class="item item4">item4</div>
+    </div>
+    <div class="container3">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
+        <div class="item item4">item4</div>
+    </div>
+    <div class="container4">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
+        <div class="item item4">item4</div>
+    </div>
+    <div class="container5">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
+        <div class="item item4">item4</div>
+    </div>
+    <div class="container6">
+        <div class="item item1">item1</div>
+        <div class="item item2">item2</div>
+        <div class="item item3">item3</div>
+        <div class="item item4">item4</div>
+    </div>
+</body>
+</html>

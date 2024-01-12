@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블록레벨 vs 인라인레벨</title>
+    <!-- 
+        블럭레벨 : 컨텐츠 크기를 지정할 수 있다.(width, height)
+        인라인레벨 : 컨텐츠 크기를 지정할 수 없다.(width, height)
+     -->
+    <style>
+        p {
+            display: inline;
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+        }
+        span {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <span>홍길동</span>
+    <p>홍길동</p>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        .wrap {
+            display: flex;
+            flex-direction: row; /* row or column */
+            justify-content: space-evenly; /* 열 기준 */
+            align-items : center; /* 행 기준 */
+
+        }
+        .box {
+            font-size: 20px;
+            color: white
+        }
+
+        .box.box1 {
+            background-color: lightcoral;
+            width: 100px;
+            height: 50px;
+
+        }
+
+        .box.box2 {
+            background-color: darkgoldenrod;
+            width: 200px;
+            height: 80px;
+
+        }
+
+        .box.box3 {
+            background-color: deepskyblue;
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- .box.box${box$}*3 -->
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+    </div>
+</body>
+
+</html>
