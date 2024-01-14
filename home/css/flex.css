@@ -1,0 +1,31 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+main {
+  width: 100%;
+  height: 100vh;
+  background: lightskyblue;
+}
+section {
+  width: 95%;
+  height: 95%;
+  border: 10px solid blue;
+  display: flex;
+  flex-flow: wrap row;
+  /* flex-direction과 flex-wrap을 합쳐서 flex-flow로 속성 가능 */
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  justify-content: space-evenly; /* 열 방향 정렬 */
+  /* align-items: center;  */
+  /*align-items는 wrap이랑 사용시 주의 -> 그래서 content를 사용 */
+  align-content: center; /* 행 방향 정렬 */
+}
+section article {
+  width: 50px;
+  height: 50px;
+  background: lightcoral;
+  border: 1px solid black;
+  text-align: center;
+}
