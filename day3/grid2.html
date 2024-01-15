@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid-area</title>
+  <style>
+    * {
+      outline: 1px solid black;
+    }
+    a {
+      text-decoration: none;
+      color : black;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 100px 1fr 100px;
+      grid-template-rows: 250px 50px auto 20px 70px;
+      grid-template-areas:
+        "header header header"
+        "gnb    gnb    gnb"
+        "a      main   b"
+        ".      .      ."
+        "footer footer footer";
+    }
+
+    header {
+      grid-area: header;
+      background-image: url('https://cdn.pixabay.com/photo/2017/07/23/16/01/nature-2531761_1280.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    nav {
+      grid-area: gnb;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: flex-end;
+      padding: 0;
+      background-color: #333;
+    }
+    nav ul li a {
+      padding: 0px 10px;
+      background-color: #333;
+      color: #fff;
+    }
+    nav ul li a:hover {
+      background-color: #aaa;
+    }
+
+    aside.left {
+      grid-area: a;
+    }
+
+    main {
+      grid-area: main;
+    }
+
+    .s1:hover {
+      z-index: 1;
+      transform: scale(1.25);
+      background-color: pink;
+      transition: all ease 2s 0s;
+    }
+
+    aside.right {
+      grid-area: b;
+    }
+
+    footer {
+      grid-area: footer;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- .container>header{header}+nav{gnb_menu}+aside{a}+main{main}>section.s${섹션$}*3^aside{b}+footer{footer} -->
+  <div class="container">
+    <header>header</header>
+    <nav><ul>
+      <li><a href="https://www.google.co.kr">구글</a></li>
+      <li><a href="https://www.naver.com/">네이버</a></li>
+      <li><a href="https://www.daum.net/">다음</a></li>
+    </ul></nav>
+    <aside class="left">side_a</aside>
+    <main>main
+      <section class="s1">
+        <h2>섹션1</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias tempora, deserunt nobis molestias soluta
+          molestiae odio nam explicabo accusantium sit. Vel necessitatibus maxime architecto cumque eius modi ea, atque
+          libero!
+          Veritatis et, alias minima laboriosam quisquam recusandae maiores iure. Maiores, suscipit explicabo. Quibusdam
+          repellendus porro ipsum officiis magni, eveniet minima recusandae sequi perferendis debitis. Officia vel
+          minima maxime animi blanditiis?
+          Nam vitae porro adipisci dolores dolorum iure eveniet exercitationem possimus eius itaque maxime accusantium,
+          asperiores debitis similique commodi minima modi! Repudiandae omnis fugiat cupiditate alias optio illum magnam
+          harum illo!</p>
+      </section>
+      <section class="s2">
+        <h2>섹션2</h2>
+        <ul>
+          <li>항목1</li>
+          <li>항목2</li>
+          <li>항목3</li>
+        </ul>
+      </section>
+      <section class="s3">
+        <h2>섹션3</h2>
+        <label for="">이메일링</label>
+        <input type="text" name="" id="">
+      </section>
+    </main>
+    <aside class="right">side_b</aside>
+    <footer>footer<p>인재교육원</p>
+    </footer>
+  </div>
+</body>
+
+</html>

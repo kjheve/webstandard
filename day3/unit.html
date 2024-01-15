@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font-size</title>
+    <style>
+        html {
+            font-size: 16px;
+        }
+        body {
+            font-size: 20px;
+        }
+        span.g1 {
+            /* em : 현재 요소의 글꼴 크기 */
+            font-size: 2em; /* = 40px */
+        }
+            /* rem : 루트요소(html)의 글꼴 크기 */
+        span.g2 {
+            font-size: 2rem; /* = 32px */
+        }
+        span.g3 {
+            /* % = 부모요소(body)의 글꼴 크기 */
+            font-size: 50%; /* = 10px */
+        }
+        span.g4 {
+            /* 뷰포트(viewport) 폭(width) */
+            font-size: 10vw; 
+        }
+        span.g5 {
+            /* 뷰포트(viewport) 높이(height) */
+            font-size: 10vh;
+        }
+    </style>
+</head>
+<body>
+    <span class="g1">홍길동</span>
+    <span class="g2">홍길순</span>
+    <span class="g3">홍길서</span>
+    <span class="g4">홍길남</span>
+    <span class="g5">홍길북</span>
+</body>
+</html>
