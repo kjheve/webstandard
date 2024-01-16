@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex01 grid로 만들기</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      outline: 1px solid black;
+    }
+
+    :root {
+      /* --해서 이름 변수 선언 */
+      --bg-color1: #452c54;
+      --bg-color2: #5F3C73;
+      --bg-color3: #754A8E;
+      --bg-color4: #8B58A9;
+      --bg-color5: #9D73B7;
+      --bg-color6: #AF8CC4;
+    }
+
+    .wrap {
+      display: grid;
+      grid-template-rows: 50px 100px 50px 25vh 50px 50px;
+      grid-template-columns: 1fr 50vw 1fr;
+      grid-template-areas:
+        "upm    upm    upm"
+        "header header header"
+        "gnb    gnb    gnb"
+        ".    container ."
+        "fm   fm       fm"
+        "ft   ft       ft";
+    }
+/* --------------공통속성 ---------------- */
+    /* 박스안에 또 grid */
+    .grid-items {
+      display: grid;
+      justify-content: center;
+    }
+    .grid-items > * {
+      width: 50vw
+    }
+/* ----------------------------------- */
+    .grid-items.upm {
+      grid-area: upm;
+      background-color: var(--bg-color1);
+    }
+    .grid-items .upm-item {
+      background-color: var(--bg-color2);
+    }
+/* ----------------------------------- */
+    .grid-items.header {
+      grid-area: header;
+      background-color: var(--bg-color2);
+    }
+    .header-item {
+      background-color: var(--bg-color3);
+    }
+/* ----------------------------------- */
+    .grid-items.gnb {
+      grid-area: gnb;
+      background-color: var(--bg-color3);
+    }
+    .gnb-item {
+      background-color: var(--bg-color4);
+    }
+/* ----------------------------------- */
+    .container {
+      grid-area: container;
+    }
+    .sub_con {
+      display: grid;
+      /* grid-template-rows: 1fr 1fr 1fr; */
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+    /* .sub_con > * {
+      grid-row: 1 / 4;
+    } */
+    .container .ct {
+      background: green;
+    }
+    .container .sb {
+      background: lightblue;
+    }
+    .container .sm {
+      background: gainsboro;
+    }
+/* ----------------------------------- */
+    .grid-items.fm {
+      grid-area: fm;
+      background-color: var(--bg-color4);
+    }
+    .fm-item {
+      background-color: var(--bg-color5);
+    }
+/* ----------------------------------- */
+    .grid-items.ft {
+      grid-area: ft;
+      background-color: var(--bg-color5);
+    }
+    .ft-item {
+      background-color: var(--bg-color6);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="grid-items upm">
+      <div class="upm-item">Uppermost</div>
+    </div>
+
+    <div class="grid-items header">
+      <div class="header-item">Header</div>
+    </div>
+
+    <div class="grid-items gnb">
+      <div class="gnb-item">Gnb</div>
+    </div>
+
+    <div class="grid-items container">
+      <div class="sub_con">
+        <div class="ct">Content</div>
+        <div class="sb">Sidebanner</div>
+        <div class="sm">Sidemenu</div>
+      </div>
+    </div>
+
+    <div class="grid-items fm">
+      <div class="fm-item">Foot Menu</div>
+    </div>
+
+    <div class="grid-items ft">
+      <div class="ft-item">Footer</div>
+    </div>
+
+  </div>
+</body>
+
+</html>

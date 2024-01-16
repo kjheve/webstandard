@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex02_Sol - Grid</title>
+  <style>
+    * {
+      outline: 1px solid black;
+    }
+
+    :root {
+      /* --해서 이름 변수 선언 */ /* var()로 변수 활용 */
+      --bg-color1: #452c54;
+      --bg-color2: #5F3C73;
+      --bg-color3: #754A8E;
+      --bg-color4: #8B58A9;
+      --bg-color5: #9D73B7;
+      --bg-color6: #AF8CC4;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .wrap {
+      display: grid;
+      grid-template-columns: 1fr 500px 1fr;
+      grid-template-rows: 50px 100px 50px minmax(200px, auto) 50px 70px;
+      grid-template-areas:
+      "umm-l umm umm-r"
+      "hdr-l hdr hdr-r"
+      "gnb-l gnb gnb-r"
+      "main-l main main-r"
+      "fm-l   fm   fm-r"
+      "foot-l foot foot-r";
+    }
+
+    /* --------------텍스트 가운데 정렬------------- */
+
+    .wrap .item {
+      display: grid;
+      /* justify-items: center;
+      align-items: center; */
+      place-items: center;
+      color: #222;
+    }
+
+    /* ----------------------------------- */
+
+    .wrap .item.umm-l,
+    .wrap .item.umm-r {
+      background-color: var(--bg-color1);
+    }
+    .wrap .item.umm {
+      background-color: var(--bg-color2);
+    }
+
+    /* ----------------------------------- */
+
+    .wrap .item.hdr-l,
+    .wrap .item.hdr-r {
+      background-color: var(--bg-color2);
+    }
+    .wrap .item.hdr {
+      background-color: var(--bg-color3);
+    }
+
+    /* ----------------------------------- */
+
+    .wrap .item.gnb-l,
+    .wrap .item.gnb-r {
+      background-color: var(--bg-color3);
+    }
+    .wrap .item.gnb {
+      background-color: var(--bg-color4);
+    }
+
+    /* ----------------------------------- */
+
+    .wrap .item.main {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      place-items: stretch;
+      border : 5px solid black;
+      /* box-sizing: border-box; */
+    }
+    /* 또 한번 더 텍스트 정렬 */
+    .wrap .item.main > * {
+      display: grid;
+      place-items: center;
+    }
+    .wrap .item.main .content {
+      background-color: lightblue;
+    }
+    .wrap .item.main .sb {
+      background-color: lightcoral;
+    }
+    .wrap .item.main .sm {
+      background-color: lightgoldenrodyellow;
+    }
+
+    /* ----------------------------------- */
+
+    .wrap .item.fm-l,
+    .wrap .item.fm-r {
+      background-color: var(--bg-color4);
+    }
+    .wrap .item.fm {
+      background-color: var(--bg-color5);
+    }
+    /* ----------------------------------- */
+    .wrap .item.foot-l,
+    .wrap .item.foot-r {
+      background-color: var(--bg-color5);
+    }
+    .wrap .item.foot {
+      background-color: var(--bg-color6);
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <!-- .wrap>.item{item$}*18 -->
+  <div class="wrap">
+    <div class="item umm-l">item1</div>
+    <div class="item umm">Uppermost Menu</div>
+    <div class="item umm-r">item3</div>
+    <div class="item hdr-l">item4</div>
+    <div class="item hdr">Header</div>
+    <div class="item hdr-r">item6</div>
+    <div class="item gnb-l">item7</div>
+    <div class="item gnb">Nav</div>
+    <div class="item gnb-r">item9</div>
+    <div class="item main-l">item10</div>
+    <div class="item main">
+      <!-- .content{content}+.sb{Sidebanner}+.sm{Sidemenu} -->
+      <div class="content">content</div>
+      <div class="sb">Sidebanner</div>
+      <div class="sm">Sidemenu</div>
+    </div>
+    <div class="item main-r">item12</div>
+    <div class="item fm-l">item13</div>
+    <div class="item fm">Footer Menu</div>
+    <div class="item fm-r">item15</div>
+    <div class="item foot-l">item16</div>
+    <div class="item foot">Footer</div>
+    <div class="item foot-r">item18</div>
+  </div>
+</body>
+</html>
