@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입_sol => 밑에 버튼들 form안에 넣기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Nanum+Myeongjo&display=swap"
+    rel="stylesheet">
+
+    <!-- 폰트어썸 -->
+  <script src="https://kit.fontawesome.com/52ca191dc3.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* * {outline: 1px solid black;} */
+
+    body {
+      margin: 0;
+    }
+
+    /* 공통 */
+    .btn {
+      background-color: lightsalmon;
+      color: #fff;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-weight: bold;
+      font-family: inherit;
+    }
+
+    /* 전체 */
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 회원 가입 부문 */
+    .wrap .member_join-wrap {
+      width: 600px;
+    }
+
+    /* 회원가입 타이틀 */
+    .wrap .member_join-wrap .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      letter-spacing: .2rem;
+    }
+
+    .wrap .member_join-wrap .title h2 {
+      /* box-shadow : 5px 5px 5px 5px rgba(85, 86, 87, .5); */
+      text-shadow: 5px 5px 5px rgba(85, 86, 87, .5);
+      font-family: "Gamja Flower", sans-serif;
+      font-weight: 800;
+    }
+
+    .wrap .member_join-wrap .member_join .join_frm select {
+      font-family: inherit;
+      font-weight: 400;
+    }
+
+    /* 회원가입 양식 */
+    .wrap .member_join-wrap .member_join .join_frm {
+      display: grid;
+      grid-template-columns: 100px auto;
+      grid-template-rows: repeat(11, auto);
+      /* grid-auto-rows: minmax(30px, auto) */
+      gap: 1px;
+      padding: 2px;
+      /* box-sizing: border-box; */
+      /* background-color: lightblue; */
+      /* 대문자를 소문자로 */
+      text-transform: lowercase;
+      font-family: "Nanum Myeongjo", serif;
+      font-weight: 400;
+    }
+
+    .wrap .member_join-wrap .member_join .join_frm>div {
+      border: ridge;
+      padding-left: 5px;
+    }
+
+    .wrap .member_join-wrap .member_join .join_frm>div>label {
+      letter-spacing: 0.3em;
+    }
+
+    /* 회원가입 버튼그룹 */
+    .wrap .member_join-wrap .member_join .join_frm>div.btn_grp {
+      grid-row: 11 / 12;
+      grid-column: 1 / -1;
+      padding-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+    }
+
+    .wrap .member_join-wrap .member_join .join_frm .btn_grp input[type="button"] {
+      margin-right: 3px;
+    }
+
+    /* 폰트어썸 스타일주기 */
+    .fa-regular.fa-envelope {
+      padding-left: 5px;
+      color: lightsalmon;
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+    .fa-solid.fa-mobile-retro {
+      padding-left: 5px;
+      color: lightsalmon;
+      font-size: 1.5rem;
+    }
+    .fa-brands.fa-youtube {
+      color: white;
+      font-size: 1.5rem;
+    }
+    .btn.youbtn {
+      margin-left: 3px;
+    }
+
+    /* 배경 이미지 */
+    .wrap .banner {
+      background-image: url('https://media.istockphoto.com/id/1682336168/ko/%EB%B2%A1%ED%84%B0/%ED%95%B4%ED%94%BC-%EC%BB%A4%ED%94%BC-%EB%8D%B0%EC%9D%B4-%ED%9C%B4%EC%9D%BC-%EA%B0%9C%EB%85%90%EC%9E%85%EB%8B%88%EB%8B%A4-%EB%B0%B0%EA%B2%BD-%EB%B0%B0%EB%84%88-%EC%B9%B4%EB%93%9C-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EB%B9%84%EB%AC%B8%EC%9D%B4-%EC%9E%88%EB%8A%94-%ED%8F%AC%EC%8A%A4%ED%84%B0%EB%A5%BC-%EC%9C%84%ED%95%9C-%ED%85%9C%ED%94%8C%EB%A6%BF%EC%9E%85%EB%8B%88%EB%8B%A4-%EB%B2%A1%ED%84%B0-eps10-%EA%B7%B8%EB%A6%BC%EC%9E%85%EB%8B%88%EB%8B%A4.jpg?s=2048x2048&w=is&k=20&c=1pmfhPGtyERUtFG7sysw2EPuODY4mCzKQ1ksu7D3FsI=');
+      background-size: cover;
+      background-repeat: no-repeat;
+      /* background-position: center; */
+      background-position-y: 35%;
+      background-position-x: center;
+      width: 600px;
+      height: 150px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="wrap">
+    <div class="banner"></div>
+    <div class="member_join-wrap">
+      <div class="title">
+        <h2>회원가입</h2>
+      </div>
+      <div class="member_join">
+        <form action="" class="join_frm">
+          <div class="cell">
+            <label for="id">아이디</label>
+          </div>
+          <div class="cell">
+            <input type="text" name="" id="id">
+            <input class="btn" type="button" value="중복확인">
+          </div>
+          <div class="cell">
+            <label for="name">이름</label>
+          </div>
+          <div class="cell">
+            <input type="text" name="" id="name">
+          </div>
+          <div class="cell">
+            <label for="">성별</label>
+          </div>
+          <div class="cell">
+            <input type="radio" name="gen" id="">
+            <label for="">남</label>
+            <input type="radio" name="gen" id="">
+            <label for="">여</label>
+          </div>
+          <div class="cell">
+            <label for="pw">암호</label>
+          </div>
+          <div class="cell">
+            <input type="password" name="" id="pw">
+          </div>
+          <div class="cell">
+            <label for="pw_check">암호확인</label>
+          </div>
+          <div class="cell">
+            <input type="password" name="" id="pw_check">
+            <span>*같은 암호를 입력하세요</span>
+          </div>
+          <div class="cell">
+            <label for="email">이메일</label>
+          </div>
+          <div class="cell">
+            <div class="email">
+              <input type="text" name="" id="email" size="8">
+              <span>@</span>
+              <input type="text" name="" id="" size="8">
+              <select name="" id="">
+                <option value="naver.com">naver.com</option>
+                <option value="daum.net" selected>daum.net</option>
+                <option value="gmail.com">gmail.com</option>
+                <option value="instagram.com">instagram.com</option>
+                <option value="nate.com">nate.com</option>
+                <option value="kakao.com">kakao.com</option>
+                <option value="hanafos.com">hanafos.com</option>
+                <option value="facebook.com">facebook.com</option>
+              </select>
+              <i class="fa-regular fa-envelope fa-shake"></i>
+            </div>
+          </div>
+          <div class="cell">
+            <label for="add">주소</label>
+          </div>
+          <div class="cell">
+            <input type="text" name="" id="add">
+            <input class="btn" type="button" value="주소찾기">
+          </div>
+          <div class="cell">
+            <label for="">휴대폰</label>
+          </div>
+          <div class="cell">
+            <div class="phone">
+              <input type="radio" checked name="phone" id="">
+              <span>SKT</span>
+              <input type="radio" name="phone" id="">
+              <span>KT</span>
+              <input type="radio" name="phone" id="">
+              <span>LGU+</span>
+            </div>
+            <div class="phoneNum">
+              <select name="" id="">
+                <option value="">010</option>
+                <option value="">011</option>
+                <option value="">012</option>
+                <option value="">016</option>
+                <option value="">017</option>
+                <option value="">019</option>
+                <option value="">999</option>
+              </select>
+              <span>-</span>
+              <input type="text" name="" id="" size="2" maxlength="4">
+              <span>-</span>
+              <input type="text" name="" id="" size="2" maxlength="4">
+              <i class="fa-solid fa-mobile-retro fa-bounce"></i>
+            </div>
+          </div>
+          <div class="cell">
+            <label for="">관심</label>
+          </div>
+          <div class="cell">
+            <input type="checkbox" checked name="" id="">
+            <span>쇼핑</span>
+            <input type="checkbox" name="" id="">
+            <span>게임</span>
+            <input type="checkbox" name="" id="">
+            <span>여행</span>
+            <input type="checkbox" name="" id="">
+            <span>기타</span>
+          </div>
+          <div class="cell">
+            <label for="info">자기소개</label>
+          </div>
+          <div class="cell" id="textarea">
+            <textarea class="textarea" id="info" style="box-sizing:border-box;width:100%;height:100px;"></textarea>
+          </div>
+          <div class="btn_grp">
+            <input class="btn" type="button" value="확인">
+            <input class="btn" type="reset" value="다시입력">
+            <button class="btn youbtn"><i class="fa-brands fa-youtube"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
