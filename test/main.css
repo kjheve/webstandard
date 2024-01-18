@@ -1,0 +1,162 @@
+/* * {outline: 1px solid #000;} */
+
+/* -- 전체 레이아웃 grid 구성 --  */
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 600px 1fr;
+  grid-template-rows: 50px 150px 50px auto 70px;
+}
+
+.wrap .top {
+  grid-column: 1/4;
+}
+
+.wrap .head,
+.wrap .nav,
+.wrap .main,
+.wrap .footer {
+  grid-column: 2/3;
+}
+.wrap .space1 {
+  grid-column: 1/2;
+  grid-row: 2/6;
+}
+.wrap .space2 {
+  grid-column: 3/4;
+  grid-row: 2/-1;
+}
+
+/* -- 최상위 메뉴 top -- */
+.wrap .top .top-wrap {
+  background-color: #000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top-item {
+  color: #fff;
+  padding-right: 10px;
+  line-height: 50px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* -- 헤더 header -- */
+
+header.head {
+  background-image: url('https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg');
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 30%;
+}
+
+/* -- 메인메뉴 nav -- */
+.nav .nav-wrap {
+  margin: 0;
+  padding-left: 0;
+  line-height: 50px;
+  list-style: none;
+  background-color: #000;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* .nav .nav-wrap li {
+  flex: 1;
+} */
+
+.nav .nav-wrap li a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.nav .nav-wrap li a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------- 메인 main -------------------------- */
+/* -- 메인안 레이아웃 flex 구성 -- */
+.main .main-wrap {
+  display: flex;
+}
+
+.main .main-wrap .main-aside {
+  flex: 20%;
+  /* flex: 2; */
+  background-color: lightskyblue;
+}
+
+.main .main-wrap .main-section {
+  flex: 80%;
+  /* flex : 8; */
+  background-color: lightcyan;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -- 메인안에 main-section -- */
+.main-section h3.title {
+  /* text-align: center; */
+  letter-spacing: 0.5em;
+  margin: 10px;
+  margin-top: 30px;
+  text-shadow: 5px 5px 5px rgba(85, 85, 85, .5);
+}
+
+.main-section form.section-wrap {
+  width: 250px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.main-section form.section-wrap > * {
+  padding: 0.3px;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  width: 90px;
+}
+
+.main-section form.section-wrap > button[type="submit"] {
+  background-color: green;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px;
+  border: none;
+  margin-top: 15px;
+}
+
+label.info {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+label {
+  font-size: 0.8rem;
+}
+
+/* ---------------------------------------------------- */
+
+/* -- 푸터 footer -- */
+.footer .footer-wrap {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(128, 128, 128);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
