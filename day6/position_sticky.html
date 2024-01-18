@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position : sticky</title>
+  <style>
+
+/* sticky가 동작하지 않을 때 확인
+1. sticky속성을 갖는 요소들은 자신의 부모 요소 안에서만 적용됨
+2. 부모태그에 무조건 height 높이 값이 들어가 있어야 한다.
+3. 부모요소중에 overflow : hidden, auto, scroll 속성이 적용되어 있으면 안된다. */
+
+
+    * {
+      outline: 1px solid black;
+    }
+
+    body {
+      /* margin: 0; */
+      background-color: rgba(119, 136, 153, 0.5);
+    }
+
+    nav {
+      /* 크기를 조절 안하면 컨텐츠 크기만큼 차지함 */
+      width: 100%;
+      height: 50px;
+      background-color: rgba(122, 44, 195, 0.9);
+      position: fixed;
+      top: 0;
+      z-index: 2;
+    }
+
+    .wrap {
+      width: 500px;
+      height: 500px;
+      background-color: rgba(169, 234, 169, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .wrap .box-wrap {
+      width: 400px;
+      height: 400px;
+      background-color: rgba(255, 160, 122, 0.5);
+      position: relative;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .box1 {
+      background-color: rgba(255, 182, 193, 0.9);
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    .box2 {
+      background-color: rgba(250, 250, 210, 0.9);
+      position: fixed;
+      top: 15pxpx;
+      right: 0;
+    }
+
+    .box3 {
+      background-color: rgba(224, 255, 255, 0.9);
+      position: sticky;
+      top: 100px;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>메뉴</nav>
+  <div class="wrap">
+    <div class="box-wrap">
+      <div class="box box1">box1</div>
+      <div class="box box2">box2</div>
+      <div class="box box3">box3</div>
+    </div>
+  </div>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur tenetur provident consectetur, esse corrupti libero inventore soluta rerum. Mollitia reprehenderit assumenda molestias officiis eius libero explicabo deserunt numquam dolore saepe.
+Laborum, deserunt molestias consequatur laudantium sapiente optio natus officiis! Velit nostrum iusto placeat harum distinctio provident voluptate vel ut, nisi ad cum nulla ratione. Laboriosam officiis nulla in minus adipisci.
+Pariatur quod labore velit, sequi ut corrupti est atque aspernatur delectus iusto voluptas debitis ea exercitationem fugiat quae modi maxime cumque saepe minima doloribus incidunt et molestiae! Et, ipsa delectus.
+Ipsam impedit amet ab maxime, fugiat nisi beatae animi dolorem eos! Nemo, error. Quidem voluptates consequatur nesciunt exercitationem culpa. Aspernatur nulla, aperiam impedit blanditiis adipisci minus ea voluptatibus. Dolorum, delectus.
+Necessitatibus perspiciatis aliquam qui tempora voluptas. Quasi voluptates aspernatur eos architecto illum. Error, dolor, id rerum deleniti quas ab doloremque cumque sapiente porro, maiores dolorum! Facere similique unde beatae numquam?
+Consectetur corporis, expedita, inventore ipsa accusantium omnis unde itaque laboriosam sit ducimus qui voluptatem, quidem nemo voluptatum? Iste molestiae suscipit at, nemo aut praesentium vel ipsam consequuntur assumenda voluptas debitis?
+Corporis molestias similique sequi, recusandae harum repellat sapiente dolorum voluptate nemo dolorem et nesciunt commodi voluptas cum laudantium, eligendi assumenda blanditiis ea tenetur nam quaerat velit molestiae. Praesentium, dolorum perspiciatis?
+Sapiente maxime nemo aperiam expedita nisi natus hic ducimus eligendi sit placeat quidem deleniti labore aliquid, rerum nobis. Totam iste consectetur animi non recusandae! Autem at laudantium corrupti pariatur accusantium.
+Quisquam nostrum officia placeat ut nobis fuga libero a, officiis aut voluptatem, nesciunt ex sequi soluta veniam atque impedit sit minima animi distinctio saepe rerum quos! Dicta doloribus odio cupiditate.
+Excepturi, itaque odit beatae architecto totam distinctio aspernatur numquam quasi eum consectetur omnis quidem laborum accusantium mollitia similique officia fuga nihil, quo est, nesciunt iure. Commodi placeat quaerat quam natus.
+Explicabo non optio nobis hic saepe minima sed nulla aliquam deserunt ab qui molestias doloremque sequi veritatis ex fugit debitis sapiente perferendis, modi ratione aut. Alias voluptates assumenda vel sapiente!
+Nihil impedit quia molestiae error iure architecto beatae id ratione, eum repudiandae totam saepe hic aliquam distinctio sequi natus blanditiis quo reprehenderit facere. Expedita voluptas voluptates voluptate numquam, possimus repellendus?
+Itaque quidem maiores amet mollitia molestiae cupiditate dignissimos, veniam ipsa rem ab ipsam corporis perspiciatis facere maxime iure. Repellat repellendus unde, illum voluptates esse error. Expedita doloribus eos debitis impedit.
+Vel tempore perferendis delectus asperiores quidem esse perspiciatis temporibus recusandae libero ea expedita fugiat quam iure, quo beatae ullam? Omnis facere numquam adipisci ea saepe architecto? At pariatur nihil quasi!
+Numquam expedita harum eligendi necessitatibus aspernatur incidunt doloremque cum repellendus ea, ipsam a, quisquam odio veritatis. Perspiciatis deleniti dolore, eos ipsum necessitatibus deserunt eius cumque quis odio exercitationem libero architecto!
+Officiis consequatur veritatis, nihil possimus, beatae perspiciatis incidunt id veniam nostrum cupiditate enim facilis dolorum quidem, optio ab. Architecto iste accusantium eius corrupti fugit. Ipsam facere eveniet quia repudiandae quo!
+Hic, eveniet. Culpa, mollitia architecto. Excepturi, culpa? Perspiciatis nobis est voluptatum perferendis officiis, nesciunt dolores amet possimus fugit incidunt doloribus beatae et dignissimos alias maxime nam placeat! Quos, voluptas error?
+Minima vel ut recusandae natus autem officia, et, animi soluta fugit qui nemo error eius. Repellat animi rem dolores veniam officia placeat quasi, quos similique sequi. Dolores at explicabo officiis.
+Fugiat, provident alias, suscipit perferendis aperiam, incidunt odit at earum laboriosam placeat libero? Dicta harum accusamus molestias suscipit. Commodi blanditiis dicta cum harum consequuntur necessitatibus iusto rem nobis tempora libero.
+Numquam, quae. Aperiam laudantium animi distinctio, alias, magni voluptate ducimus quae perferendis corporis aliquid dolor maxime rem, aliquam dolore laborum sunt nihil labore quasi ex quia voluptatem. Maiores, id soluta.</p>
+</body>
+
+</html>

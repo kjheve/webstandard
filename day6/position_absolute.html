@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position : absolute</title>
+  <style>
+/* ----------- absolute ----------- */
+/* - 가장 가까운 위치 지정 조상 요소
+     (relative, absolute, fixed를 가진 요소)에 대해
+     상대적으로 위치가 결정
+   - 위치 지정 조상 요소가 없으면 본문(body)를 기준 */
+
+    * {outline: 1px solid black;}
+    body {
+      /* margin: 0; */
+      background-color: rgba(119, 136, 153, 0.5);
+    }
+    
+    .wrap {
+      width: 500px;
+      height: 500px;
+      background-color: rgba(169, 234, 169, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    
+    .wrap .box-wrap {
+      width: 400px;
+      height: 400px;
+      background-color: rgba(255, 160, 122, 0.5);
+      position: relative;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .box1 {
+      background-color: rgba(255, 182, 193, 0.9);
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    .box2 {
+      background-color: rgba(250, 250, 210, 0.9);
+      
+    }
+    .box3 {
+      background-color: rgba(224, 255, 255, 0.9);
+    }
+  </style>
+</head>
+<body>
+  <wrap>
+    <div class="wrap">
+      <div class="box-wrap">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+      </div>
+    </div>
+  </wrap>
+</body>
+</html>
