@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지도 검색</title>
+  <!-- 네이버 지도 API 가져오기 -->
+  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=n8exfj66ne"></script>
+  <!-- 카카오 지도 API 가져오기 -->
+  <script type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dbac7504dbcf39bcee22b8877f64ffd9&libraries=services,clusterer,drawing"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #title {
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    #search {
+      position: absolute;
+      z-index: 1000;
+      top: 100px;
+      left: 100px;
+      padding: 10px;
+      background-color: white;
+      border: 1px solid rgb(0, 0, 0, .2);
+    }
+
+    #keyword {
+      /* margin-right: 10px; */
+      border: none;
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="title">
+    <h3>지도</h3>
+  </div>
+  <div id="map" style="width: 80vw; height: 80vh;"></div>
+  <div id="search">
+    <label for="">검색어</label>
+    <input type="text" id="keyword">
+  </div>
+
+  <script>
+
+    let map = null;     // 지도
+    const markers = []; // 마커
+
+
+    // 장소 검색 객체를 생성합니다
+    var ps = new kakao.maps.services.Places();
+
+    // 위치 가져오기 및 지도 생성
+    async function fetchLocation() {
+      try {
+        const position = await getLocation();
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        console.log(`위도 : ${lat}, 경도 : ${lng}`);
+        makeMap(lat, lng);
+      } catch (err) {
+        console.error(`오류 : ${err.message}`)
+      }
+    }
+
+    window.addEventListener('load', fetchLocation);
+
+    // 초기 지도생성
+    function makeMap(lat, lng) {
+      map = new naver.maps.Map('map', {
+        center: new naver.maps.LatLng(lat, lng),
+        zoom: 16
+      });
+
+      // 내 위치 마커 표시
+      marker = new naver.maps.Marker({
+        position: new naver.maps.LatLng(lat, lng),
+        map: map
+      });
+    }
+
+    // 검색어 입력 후 Enter 키 입력 시 검색 실행
+    const $keyword = document.getElementById('keyword');
+    $keyword.addEventListener('keyup', evt => {
+      if (evt.key == 'Enter') {
+        evt.preventDefault();
+        searchKeyword($keyword.value)
+        $keyword.value = '';
+        hideMarkers(); // 기존 마커 제거
+      }
+    });
+
+    // 검색어로 장소 검색 실행
+    function searchKeyword(keyword) {
+      console.log(`검색중 : ${keyword}`)
+
+      // 검색어로 장소검색 실행
+      ps.keywordSearch(keyword, placesSearchCB);
+    }
+
+    // 장소검색이 완료됐을 때 호출되는 콜백함수
+    function placesSearchCB(data, status, pagination) {
+      if (status === kakao.maps.services.Status.OK) {
+        console.log(data);
+        displayPlaces(data);
+      } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+        alert('검색 결과가 존재하지 않습니다.');
+      } else if (status === kakao.maps.services.Status.ERROR) {
+        alert('검색 결과 중 오류가 발생했습니다.');
+      }
+    }
+
+    // 검색된 장소를 지도에 표시하는 함수
+    function displayPlaces(places) {
+      if (places.length > 0) {
+        const firstPlace = places[0]; // 첫 번째 검색 결과
+        const latlng = new naver.maps.LatLng(firstPlace.y, firstPlace.x);
+        map.setCenter(latlng); // 지도 중심 이동
+        const marker = new naver.maps.Marker({
+          position: latlng,
+          map: map
+        });
+        markers.push(marker);
+      }
+    }
+
+    // 지도에서 마커 제거
+    function hideMarkers() {
+      markers.forEach(marker => marker.setMap(null));
+      markers.length = 0; // 마커 배열 초기화
+    }
+
+    // 현재 위치 가져오기
+    function getLocation() {
+      return new Promise((resolve, reject) => {
+        if (!navigator.geolocation) {
+          reject(new Error('Geolocation이 브라우저에서 지원되지 않음!'))
+        } else {
+          navigator.geolocation.getCurrentPosition(resolve, reject)
+        }
+      });
+    }
+
+  </script>
+</body>
+
+</html>
